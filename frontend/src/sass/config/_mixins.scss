@@ -1,0 +1,109 @@
+/* ====================
+// mixins 混和
+// ==================== */
+// ====================
+// mixins混和
+// ==================== //
+
+// body {
+//     color: yellow;
+// }
+
+//--------------------------------------------//
+// 清除浮動
+//--------------------------------------------//
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+//--------------------------------------------//
+// 置中
+//--------------------------------------------//
+@mixin absCenter{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+//--------------------------------------------//
+// position: absolute
+//--------------------------------------------//
+@mixin abs-pos ( $top : auto , $right : auto , $bottom : auto , $left : auto ) {
+  top: $top ;
+  right: $right ;
+  bottom: $bottom ;
+  left: $left ;
+  position: absolute ;
+ }
+
+//--------------------------------------------//
+// 圖片自動知道寬高
+//--------------------------------------------//
+@mixin size($w, $h) {
+	width: $w;
+	height: $h; 
+}
+// @include size(0px, 0px);
+
+//--------------------------------------------//
+// 圖片自動知道寬高
+//--------------------------------------------//
+@mixin bg($imgName,$imgs) {
+	background: url("../images/#{$imgName}.#{$imgs}") no-repeat;
+	width: image-width("../images/#{$imgName}.#{$imgs}");
+	height: image-height("../images/#{$imgName}.#{$imgs}");  
+}
+// @include bg(logo,png);
+
+//--------------------------------------------//
+// text-indent:-9999px;
+//--------------------------------------------//
+@mixin text-hide {
+	white-space: nowrap;
+	text-indent:100%;
+	overflow: hidden;
+}
+
+//--------------------------------------------//
+// 圓角
+//--------------------------------------------//
+@mixin border-radius($radius) {
+	 -webkit-border-radius:$radius;
+		-moz-border-radius:$radius;
+	     -ms-border-radius:$radius;
+	      -o-border-radius:$radius;
+	         border-radius:$radius;	
+}
+// .box { @include border-radius (10px);}
+
+//--------------------------------------------//
+// Box-sizing 設定一個元素樣式為 box-sizing: border-box;，
+// 這個元素的內距和邊框將不會增加元素本身的寬度。
+//--------------------------------------------//
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;	
+}
+
+//--------------------------------------------//
+// 陰影
+//--------------------------------------------//
+@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+          box-shadow: $shadow;	
+}
+
+// BS-_breakpoints
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+

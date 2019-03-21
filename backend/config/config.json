@@ -1,0 +1,12 @@
+{
+    "test": {
+      "PORT": 5000
+    },
+    "development": {
+      "PORT": 5000,
+      "GOOGLE_CLIENT_ID": "394850857351-htufrkf24ij153k94a077o0vv4oqshi7.apps.googleusercontent.com",
+      "GOOGLE_CLIENT_SECRET": "WRW5fGCCw--Giq56UiLpTXzu",
+      "API_KEY": "AIzaSyALpjiIoHiu_K2tqxRx-vWVpBPLkPaf_f0",
+      "BASE_URL": "http://localhost:3000"
+    }
+  }
