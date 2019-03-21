@@ -37,7 +37,6 @@ class Todolist extends Component {
 					<div className="todo">
 						<h1 className="heading-primary">
 							<span className="heading-primary--main">Todo List</span>
-							<span className="heading-primary--sub">Built by Wilson for her CSS AND SASS. Copyright © by Wilson</span>
 						</h1>											
 						<ul className="todo__list">
 							<Spin
